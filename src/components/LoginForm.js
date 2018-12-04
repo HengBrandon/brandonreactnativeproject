@@ -20,8 +20,8 @@ export default class LogInForm extends Component {
         source={require('../../media/free-blurry-background-1636594.jpg')}
       />
         <Image source={require('../../media/Save-the-Children-Logo.png')} style={{width: '100%', height: '10%'}}/>
-        <FloatLabelInput name='Username' security = '0'/>
-        <FloatLabelInput name='Password' security = '1'/>
+        <FloatLabelInput name='Username' security = {false}/>
+        <FloatLabelInput name='Password' security = {true} />
         <Button block rounded danger
             onPress={() => console.log('my first app')}
             style = {styles.button_style}

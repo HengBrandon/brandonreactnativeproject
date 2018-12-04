@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import {Item, Input, Label} from 'native-base'
 import { StyleSheet } from 'react-native'
+import PropTypes from 'prop-types'
 
 class FloatLabelInput extends Component 
 {
+    // constructor(props) {
+    //     super(props);
+    //   }
+
     render () {
         return (
             <Item floatingLabel style={styles.input_text}>
@@ -12,6 +17,10 @@ class FloatLabelInput extends Component
             </Item>
         )
     }
+}
+
+FloatLabelInput.propTypes = {
+    security: PropTypes.bool,
 }
 
 export default FloatLabelInput
@@ -29,3 +38,4 @@ const styles = StyleSheet.create({
         marginTop: '2%',
     }
   });
+
