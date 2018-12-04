@@ -7,9 +7,26 @@ class AlbumList extends Component{
 
     state = { albums: [], other: 'hello'};
 
-    componentWillMount(){
-        axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-            .then(response => {this.setState({ albums: response.data, other: 'madam' })});
+    componentDidMount(){
+        this.getByfetch()
+        // this.getByAxio()
+    }
+
+    getByfetch(){
+		fetch('https://rallycoding.herokuapp.com/api/music_albums')
+			.then((response) => response.json())
+			.then((responseJson) => {
+				this.setState({ albums: responseJson, other: 'madam' })
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+    }
+
+    getByAxio(){
+		axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+			.then(response => {
+			    this.setState({ albums: response.data, other: 'madam' })});
     }
 
     renderAlbums(){
